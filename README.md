@@ -2,7 +2,7 @@
 
 ### Content:
 * [First Part: Test plan for "Trello" mobile application](Trello-TestPlan.pdf)
-* [Second Part: Reporting defects for the same app](Defects%20for%20Trello%20App.xlsx)
+* [Second Part: Reporting defects for the same app](https://docs.google.com/spreadsheets/d/17q4oWgtqATZDnSg2ABUwnA7vh7A_FStI-wOJ7HARrPQ/edit?usp=sharing)
 * [Fourth Part: Automated tests for Best Buy APIs](#best-buy-apis-automation)
 
 # Best-Buy-APIs-Automation
