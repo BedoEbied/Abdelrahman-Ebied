@@ -27,6 +27,10 @@ Snippet:
 </dependency>
 ````
 
+### Golden tip:
+Run LoginTests.java / RegisterTests.java one a time.
+
+> *Don't* run it as a package.
 
 ---
 
