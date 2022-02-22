@@ -3,7 +3,32 @@
 ### Content:
 * [First Part: Test plan for "Trello" mobile application](Trello-TestPlan.pdf)
 * [Second Part: Reporting defects for the same app](https://docs.google.com/spreadsheets/d/17q4oWgtqATZDnSg2ABUwnA7vh7A_FStI-wOJ7HARrPQ/edit?usp=sharing)
+* [Third Part: Automated tests for Facebook registration and login scenarios](/FacebookAutomation)
 * [Fourth Part: Automated tests for Best Buy APIs](#best-buy-apis-automation)
+
+# Facebook Automation Scenarios
+### Overview
+![image](/FacebookAutomation/Facebook.png)
+
+### Prerequisites:
+-   [Selenium](https://www.selenium.dev/)
+-   Java (version 6 minimum).
+-   IDE (IntelliJ / Eclipse).
+-   Maven.
+-   TestNG.
+> Check [pom.xml](/FacebookAutomation/pom.xml) for dependencies info.
+
+Snippet:
+```XML
+<dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.1.2</version>
+</dependency>
+````
+
+
+---
 
 # Best-Buy-APIs-Automation
 Testing RESTful API in Best Buy API playground.
