@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import utilities.ReadExcelData;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,24 +25,7 @@ public class BaseTest
         return new ChromeDriver();
     }
 
-    //Reading Data from Excel file
-    public String[][]readSheet() throws IOException, InvalidFormatException {
-        File myFile = new File("src/test/resources/loginData.xlsx");
-        XSSFWorkbook wb = new XSSFWorkbook(myFile);
-        XSSFSheet mySheet = wb.getSheet("Sheet1");
-        int numberOfRows = mySheet.getPhysicalNumberOfRows();
-        int numberOfColumns = mySheet.getRow(0).getLastCellNum();
-        String[][]myArray = new String[numberOfRows-1][numberOfColumns];
-        for (int i =1; i<numberOfRows; i++){
-            for (int j = 0; j < numberOfColumns; j++){
-                XSSFRow row = mySheet.getRow(i);
-                myArray[i-1][j] = row.getCell(j).getStringCellValue();
-            }
-        }
-        return myArray;
-    }
-
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     public void Setup() {
         driver = GetChromeDriver();
         driver.manage().window().maximize();
@@ -56,7 +40,8 @@ public class BaseTest
     }
     @DataProvider(name = "testData")
     public Object[][] testData() throws IOException, InvalidFormatException {
-        return readSheet();
+        ReadExcelData readExcelData = new ReadExcelData();
+        return readExcelData.readSheet();
 
     }
 }
