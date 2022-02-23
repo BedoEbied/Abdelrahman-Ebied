@@ -1,9 +1,8 @@
 package Tests;
 
-import PageObjects.BasePage;
 import PageObjects.RegisterPage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class RegisterTests extends BaseTest {
@@ -11,7 +10,7 @@ public class RegisterTests extends BaseTest {
     RegisterPage registerPage;
 
 
-    @BeforeTest
+    @BeforeClass
     public void CreateBtnClick(){
         registerPage = new RegisterPage(driver);
         registerPage.clickCreate();
@@ -61,7 +60,6 @@ public class RegisterTests extends BaseTest {
     public void badConfirmationEmail() {
         registerPage = new RegisterPage(driver);
 
-        registerPage.clickCreate();
         registerPage.insertfName("Sarsoora");
         registerPage.insertlName("ElAmmora");
         registerPage.insertEmail("Sarsora@gmail.com");
