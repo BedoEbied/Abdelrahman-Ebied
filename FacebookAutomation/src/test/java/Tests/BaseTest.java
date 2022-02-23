@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class BaseTest
 {
-    public WebDriver driver;
+    public static WebDriver driver;
 
     public WebDriver GetChromeDriver()
     {
@@ -25,7 +25,7 @@ public class BaseTest
         return new ChromeDriver();
     }
 
-    @BeforeTest(alwaysRun = true)
+    @BeforeTest
     public void Setup() {
         driver = GetChromeDriver();
         driver.manage().window().maximize();

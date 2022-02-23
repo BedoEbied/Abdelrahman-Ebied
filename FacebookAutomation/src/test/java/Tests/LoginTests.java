@@ -17,7 +17,7 @@ public class LoginTests extends BaseTest{
         loginPage.insertEmail(email);
         loginPage.insertPass(pass);
         loginPage.clickLogin();
-        Assert.assertFalse(driver.getPageSource().contains("\"Normal Login Pass\""), "done");
+        Assert.assertFalse(driver.getPageSource().contains("\"Normal Login Pass\""));
         //Assert.assertEquals(driver.getTitle(), "Facebook");
         loginPage.clickLogout();
     }
@@ -28,7 +28,7 @@ public class LoginTests extends BaseTest{
         loginPage.insertEmail("lgh;dsh;jdfgnb");
         loginPage.insertPass("AnyPassword");
         loginPage.clickLogin();
-        System.out.println(driver.getPageSource());
+        //System.out.println(driver.getPageSource());
         Assert.assertTrue(driver.getPageSource().contains("Forgotten password"));
 
         //Assert.assertEquals(loginPage.getExpectedText(), "The email address or mobile number you entered isn't connected to an account. Find your account and log in.");
