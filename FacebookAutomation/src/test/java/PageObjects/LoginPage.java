@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     private final By emailFieldLocator = By.id("email");
     private final By passwordFieldLocator = By.id("pass");
@@ -22,18 +22,21 @@ public class LoginPage extends BasePage{
         super(_driver);
     }
 
-    public void insertEmail(String email){
+    public void insertEmail(String email) {
         new WebDriverWait(driver, shortWait).until(ExpectedConditions.elementToBeClickable(emailFieldLocator)).clear();
         new WebDriverWait(driver, shortWait).until(ExpectedConditions.elementToBeClickable(emailFieldLocator)).sendKeys(email);
     }
-    public void insertPass(String pass){
+
+    public void insertPass(String pass) {
         new WebDriverWait(driver, shortWait).until(ExpectedConditions.elementToBeClickable(passwordFieldLocator)).clear();
         new WebDriverWait(driver, shortWait).until(ExpectedConditions.elementToBeClickable(passwordFieldLocator)).sendKeys(pass);
     }
-    public void clickLogin(){
+
+    public void clickLogin() {
         new WebDriverWait(driver, shortWait).until(ExpectedConditions.elementToBeClickable(loginButtonLocator)).click();
     }
-    public void clickLogout(){
+
+    public void clickLogout() {
         new WebDriverWait(driver, shortWait).until(ExpectedConditions.elementToBeClickable(accSettingLocator)).click();
         new WebDriverWait(driver, shortWait).until(ExpectedConditions.elementToBeClickable(logoutButtonLocator)).click();
     }

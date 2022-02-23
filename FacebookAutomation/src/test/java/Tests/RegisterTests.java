@@ -6,18 +6,19 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class RegisterTests extends BaseTest{
-    BasePage basePage;
+public class RegisterTests extends BaseTest {
+
     RegisterPage registerPage;
 
 
-//    @BeforeTest(alwaysRun = true)
-//    public void CreateBtnClick(){
-//        registerPage = new RegisterPage(driver);
-//        registerPage.clickCreate();
-//    }
+    @BeforeTest
+    public void CreateBtnClick(){
+        registerPage = new RegisterPage(driver);
+        registerPage.clickCreate();
+    }
+
     @Test
-    public void goodSignUp(){
+    public void goodSignUp() {
         registerPage = new RegisterPage(driver);
 
         registerPage.insertfName("Sarsoora");
@@ -30,16 +31,16 @@ public class RegisterTests extends BaseTest{
         registerPage.clickGender();
         registerPage.clickSignUp();
 
-        Assert.assertTrue(true);
+        Assert.assertTrue(registerPage.signupDone());
         registerPage.clickLogout();
         registerPage.clickCreate();
 
     }
 
     @Test
-    public void smallPass(){
+    public void smallPass() {
         registerPage = new RegisterPage(driver);
-        basePage = new BasePage(driver);
+
         registerPage.insertfName("Sarsoora");
         registerPage.insertlName("ElAmmora");
         registerPage.insertEmail("zarsooora@gmail.com");
@@ -55,8 +56,9 @@ public class RegisterTests extends BaseTest{
 //        String passErr = registerPage.getExpectedText();
 //        Assert.assertEquals(passErr,"Your password must be at least 6 characters long. Please try another.");
     }
+
     @Test
-    public void badConfirmationEmail(){
+    public void badConfirmationEmail() {
         registerPage = new RegisterPage(driver);
 
         registerPage.clickCreate();

@@ -27,10 +27,11 @@ Snippet:
 </dependency>
 ````
 
-### Golden tip:
-Run LoginTests.java / RegisterTests.java one a time.
+### Steps:
+1. Clone project files.
+2. Build to install dependencies.
+3. Run the [testng.xml](/FacebookAutomation/testng.xml) ✌️
 
-> *Don't* run it as a package.
 
 ---
 

@@ -1,9 +1,6 @@
 package Tests;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -11,16 +8,13 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import utilities.ReadExcelData;
 
-import java.io.File;
 import java.io.IOException;
 
-public class BaseTest
-{
+public class BaseTest {
     public static WebDriver driver;
 
-    public WebDriver GetChromeDriver()
-    {
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
+    public WebDriver GetChromeDriver() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
 
         return new ChromeDriver();
     }
@@ -34,10 +28,10 @@ public class BaseTest
     }
 
     @AfterTest
-    public void Teardown()
-    {
+    public void Teardown() {
         driver.close();
     }
+
     @DataProvider(name = "testData")
     public Object[][] testData() throws IOException, InvalidFormatException {
         ReadExcelData readExcelData = new ReadExcelData();

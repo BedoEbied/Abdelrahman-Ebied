@@ -5,14 +5,14 @@ import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTests extends BaseTest{
+public class LoginTests extends BaseTest {
     LoginPage loginPage;
     BasePage basePage;
 
 
     // Data Driven Login
     @Test(dataProvider = "testData")
-    public void goodSignIn(String email, String pass){
+    public void goodSignIn(String email, String pass) {
         loginPage = new LoginPage(driver);
         loginPage.insertEmail(email);
         loginPage.insertPass(pass);
@@ -23,7 +23,7 @@ public class LoginTests extends BaseTest{
     }
 
     @Test
-    public void badEmailPassword(){
+    public void badEmailPassword() {
         loginPage = new LoginPage(driver);
         loginPage.insertEmail("lgh;dsh;jdfgnb");
         loginPage.insertPass("AnyPassword");
@@ -35,7 +35,7 @@ public class LoginTests extends BaseTest{
     }
 
     @Test
-    public void emailBadPassword(){
+    public void emailBadPassword() {
         loginPage = new LoginPage(driver);
         loginPage.insertEmail("ebied_zmohyex_test@tfbnw.net");
         loginPage.insertPass("invalidPass");
